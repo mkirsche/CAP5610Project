@@ -1,0 +1,6 @@
+To run:
+
+python run.py *.wav
+
+
+This creates <name>.wav.txt for each file <name>.wav with the cepstral coefficients for that file.
