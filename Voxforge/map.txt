@@ -1,0 +1,11 @@
+English.american_english 0 2464
+English.european_english 5 1363
+English.canadian_english 4 538
+English.british_english 3 499
+English.indian_english 2 286
+English.new_zealand_english 1 120
+English.australian_english 6 86
+English.european_english_nonnative_speaker 9 30
+English.asian_accent 7 20
+English.american_english_nonnative_speaker 8 12
+English.irish_english 10 10

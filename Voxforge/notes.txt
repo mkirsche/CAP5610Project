@@ -1,0 +1,25 @@
+-
+Average middle second with 13 cepstral coefficients. Add delta delta to data points (13 * 3) input. 1 to 3 hidden layers
+
+-
+Find min number of frames
+take the middle portion of frames for each .wav files
+13 (or 39 if delta delta) inputs, 3 or more hidden layers
+
+-
+Average coefficients for "frames of size 1 sec
+13 (or 39) * num "frames" for inputs
+1 to 3 hidden layers
+
+
+
+
+
+
+map.txt format:
+Language.Dialect index count
+
+all.txt, train.txt, and test.txt format:
+index filepath
+
+See examples
