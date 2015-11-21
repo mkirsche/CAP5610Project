@@ -23,7 +23,7 @@ public class parser {
 			{"please_select", "other_nonnative_speaker", "other", "nonnative_speaker", "null"},
 			
 			// american_english
-			{"general_american_english", "general_american", },
+			{"general_american_english", "general_american"},
 			
 			// asian_accent
 			{"other_asian_accent"}, 
@@ -38,16 +38,17 @@ public class parser {
 			{"new_york_city_and_northern_nj", "new_york_city_and_northern_new_jersey"},
 			
 			// australian english
-			{"australian_english_adelaide"},
+			{"australian_english_adelaide"}
 	};
 	
 	public static void main(String[] args) throws Exception {
+		// Use first argument as the directory or if no arguments given,
+		// use the expected voxforge directory on the external hard drive.
 		String voxforgePath = null;
 		if(args.length > 0)
 			voxforgePath = args[0];
 		else
 			voxforgePath = "/Volumes/JOOOOOOOOOO/Voxforge uncompressed/";
-		voxforgePath = "/Users/Joshua/Desktop/Voxforge/";
 
 		// Directory to the voxforge files.
 		File voxforgeDirectory = new File(voxforgePath);
@@ -108,6 +109,8 @@ public class parser {
 					if(!wavFile.getName().endsWith(".wav")) continue; 
 					allWavFiles.println(dia.index +" " +wavFile.getPath());
 					dia.add(wavFile.getPath());
+					
+					// TODO: compute delta detlas here
 				}
 			}
 		}
