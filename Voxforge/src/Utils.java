@@ -165,10 +165,10 @@ public class Utils
 				StringBuilder sb = new StringBuilder();
 				while(st.hasMoreTokens())
 				{
-					sb.append(st.nextToken());
+					sb.append(st.nextToken() +" ");
 				}
 				
-				return sb.toString();
+				return sb.toString().trim();
 			}
 		}
 		
