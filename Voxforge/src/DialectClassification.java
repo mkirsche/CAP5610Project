@@ -15,13 +15,18 @@ public class DialectClassification
 		Utils.FastScanner test = new Utils.FastScanner(new File("test.txt"));
 		Utils.FastScanner map = new Utils.FastScanner(new File("map.txt"));
 		
+		System.out.println("Reading Training Data");
 		ArrayList<Utils.Data> trainData = Utils.readAll(train);
+		
+		System.out.println("Reading Test Data");
 		ArrayList<Utils.Data> testData = Utils.readAll(test);
 		
 		numDialects = map.nextInt();
 		
 		double[][] trainFeatures = getFeatures1(trainData);
 		double[][] testFeatures = getFeatures1(testData);
+		
+		System.out.println("Testing");
 		
 		Utils.Results results = test(trainData, testData, trainFeatures, testFeatures);
 		
@@ -65,6 +70,11 @@ public class DialectClassification
 		int[] fn = new int[numDialects];
 		for(int i = 0; i < testData.size(); i++)
 		{
+			if(i % 1000 == 0)
+			{
+				System.out.println("TEST " + i);
+			}
+		
 			int prediction = nn.predict(testFeatures[i]);
 			
 			if(prediction == testData.get(i).index)
