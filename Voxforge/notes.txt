@@ -12,10 +12,6 @@ Average coefficients for "frames of size 1 sec
 1 to 3 hidden layers
 
 
-
-
-
-
 map.txt format:
 Language.Dialect index count
 
@@ -23,3 +19,6 @@ all.txt, train.txt, and test.txt format:
 index filepath
 
 See examples
+
+
+for arg in `find -name "*.wav"`; do python run.py $arg; done
