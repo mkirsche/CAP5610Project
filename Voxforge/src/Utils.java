@@ -21,6 +21,8 @@ public class Utils
 	
 	public static Data readFile(int index, String fileName) throws Exception
 	{
+		//System.out.println(fileName);
+	
 		double[][] coeff = new double[MAX_SIZE][13];
 		
 		Utils.FastScanner cep = new Utils.FastScanner(new File(fileName));
@@ -51,7 +53,9 @@ public class Utils
 			data.add(current);
 		}
 		
-		if(data.size() > MAX_SIZE)
+		cep.close();
+		
+		if(data.size() < MAX_SIZE)
 		{
 			return null;
 		}
@@ -61,7 +65,7 @@ public class Utils
 			coeff[i] = data.get(i + (data.size() - MAX_SIZE) / 2);
 		}
 		
-		return new Data(coeff, index);
+		return new Data(coeff, data.size());
 	}
 	
 	static class Data
@@ -118,7 +122,7 @@ public class Utils
 		{
 			return overallPercent + "\n" + Arrays.toString(percent) + "\n" + macroF1;
 		}
-	}
+	}	
 	
 	static class FastScanner
 	{
