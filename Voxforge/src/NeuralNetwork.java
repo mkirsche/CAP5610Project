@@ -62,11 +62,15 @@ public class NeuralNetwork
 		// Run stochastic gradient ascent by sorting the training examples and using each one for a number of epochs
 		for(int i = 0; i < MAX_EPOCHS && stoppingCriteria < 4; i++)
 		{
+			if(i % 100 == 0)
+			{
+				System.out.println("EPOCH "  + i);
+			}
+		
 			shuffle(trainFeatures, trainClasses);
 			
-			for(int jj = 0; jj < trainFeatures.length; jj++)
+			for(int j = 0; j < trainFeatures.length; j++)
 			{
-				int j = rand.nextInt(trainFeatures.length);
 				predict(trainFeatures[j]);
 				
 				double[] target = new double[sizes[layers.length - 1]];
